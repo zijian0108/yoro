@@ -27,8 +27,8 @@ const App: FunctionalComponent = () => {
       <main>
         <router-view />
       </main>
-      <footer class="mt-28 border-t border-white/10 pt-8 pb-16">
-        <h3 class="text-5xl font-bold mb-[38px]">Contact Us</h3>
+      <footer class="mt-28 mx-auto max-w-[1180px] border-t border-white/10 pt-8 pb-16">
+        <h3 class="text-5xl text-white/80 font-bold mb-[38px]">Contact Us</h3>
         <ul class="text-white/80 space-y-[30px] text-base">
           <li class="flex item-center gap-[14px]">
             <img src={LocationImage} alt="" width={25} class="inline-block align-top" />

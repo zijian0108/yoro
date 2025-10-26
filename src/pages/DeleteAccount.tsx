@@ -55,4 +55,6 @@ const DeleteAccount: FunctionalComponent = () => {
   )
 }
 
+DeleteAccount.displayName = 'DeleteAccount'
+
 export default DeleteAccount

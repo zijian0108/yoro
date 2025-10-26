@@ -6,7 +6,6 @@ import './static/stylesheets/index.scss'
 const app = createApp(App)
 
 app.use(router)
-
 router.isReady().then(() => {
   app.mount('#root')
 })

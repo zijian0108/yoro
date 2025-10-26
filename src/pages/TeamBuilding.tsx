@@ -43,4 +43,6 @@ const TeamBuilding: FunctionalComponent = () => {
   )
 }
 
+TeamBuilding.displayName = 'TeamBuilding'
+
 export default TeamBuilding

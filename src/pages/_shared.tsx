@@ -7,7 +7,8 @@ export const BulletTitle: FunctionalComponent<{
   class?: string;
 }> = (props) => (
   <h2
-    class={`font-extrabold tracking-tight text-white flex items-center text-5xl md:text-6xl ${props.class}`}
+    class={`
+      font-extrabold tracking-tight text-white flex items-center text-5xl md:text-6xl ${props.class}`}
   >
     <div class="flex items-center mr-[14px]">
       <img src={circleLeftImage} alt="" width={29} height={29} />
@@ -23,6 +24,8 @@ export const BulletTitle: FunctionalComponent<{
   </h2>
 );
 
+BulletTitle.displayName = 'BulletTitle'
+
 export const PlaceholderImg: FunctionalComponent<{ class?: string }> = (
   props,
 ) => (
@@ -31,6 +34,8 @@ export const PlaceholderImg: FunctionalComponent<{ class?: string }> = (
   />
 );
 
+PlaceholderImg.displayName = 'PlaceholderImg'
+
 export const PhoneMock: FunctionalComponent<{ class?: string }> = (props) => (
   <div
     class={`rounded-[2.25rem] border border-white/15 bg-black/50 p-4 shadow-lg ${props.class ?? "h-96"}`}
@@ -38,3 +43,5 @@ export const PhoneMock: FunctionalComponent<{ class?: string }> = (props) => (
     <div class="rounded-2xl bg-gradient-to-br from-purple-400/30 to-pink-400/25 border border-white/15 w-full h-full" />
   </div>
 );
+
+PhoneMock.displayName = 'PhoneMock'

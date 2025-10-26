@@ -51,4 +51,6 @@ const Culture: FunctionalComponent = () => {
   )
 }
 
+Culture.displayName = 'Culture'
+
 export default Culture

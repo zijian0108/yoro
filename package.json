@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "rsbuild build",
+    "build": "rsbuild build && font-spider dist/**/*.html",
     "dev": "rsbuild dev --open",
     "preview": "rsbuild preview",
     "format": "pnpm exec biome check --write"

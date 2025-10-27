@@ -1,6 +1,7 @@
 import type { FunctionalComponent } from 'vue'
 import { RouterLink } from 'vue-router'
 import { BulletTitle } from './_shared'
+import Footer from '@/components/Footer'
 import BgImage from '@/static/images/home/bg.webp?url'
 import SenceImg01 from '@/static/images/home/sence-img01.webp?url'
 import SenceImg02 from '@/static/images/home/sence-img02.webp?url'
@@ -137,7 +138,7 @@ const Home: FunctionalComponent = () => {
               class={`flex items-center justify-center gap-10 ${section.imagePosition === 'right' ? 'flex-row' : 'flex-row-reverse'}`}
             >
               <div class="max-w-[640px] flex flex-col gap-5">
-                {section.customHeader ?? <BulletTitle text={section.title} />}
+                {section.customHeader ?? <BulletTitle class="text-[60px]" text={section.title} />}
                 <p class="text-white/80 text-[20px] leading-[30px] max-w-[567px] font-semibold">
                   {section.description}
                 </p>
@@ -250,6 +251,7 @@ const Home: FunctionalComponent = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   )
 }

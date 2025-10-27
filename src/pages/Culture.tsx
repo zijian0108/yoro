@@ -1,5 +1,6 @@
 import type { FunctionalComponent } from 'vue'
 import { BulletTitle } from './_shared'
+import Footer from '@/components/Footer'
 import BgImage from '@/static/images/culture/bg.webp?url'
 import SenceImg01 from '@/static/images/culture/sence-img05.webp?url'
 import SenceImg02 from '@/static/images/culture/sence-img06.webp?url'
@@ -28,7 +29,7 @@ const Culture: FunctionalComponent = () => {
       style={{ backgroundImage: `url(${BgImage})`, backgroundSize: 'cover' }}
     >
       <div class="max-w-6xl  max-w-[1180px] mx-auto py-10">
-        <BulletTitle class="mt-[180px] justify-center mb-[6px]" text="OUR CULTURE" />
+        <BulletTitle class="mt-[180px] justify-center text-[60px] mb-[6px]" text="OUR CULTURE" />
 
         <div class="grid md:grid-cols-2 gap-8 mb-16 mt-8">
           {items.map((item) => (
@@ -45,6 +46,7 @@ const Culture: FunctionalComponent = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

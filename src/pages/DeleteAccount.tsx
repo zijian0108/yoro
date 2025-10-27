@@ -3,6 +3,7 @@ import BgImage from '@/static/images/delete-account/bg.webp?url'
 import DeleteAccountImg01 from '@/static/images/delete-account/center-page.webp?url'
 import DeleteAccountImg02 from '@/static/images/delete-account/center-set.webp?url'
 import { BulletTitle } from './_shared'
+import Footer from '@/components/Footer'
 
 const DeleteAccount: FunctionalComponent = () => {
   return (
@@ -10,7 +11,7 @@ const DeleteAccount: FunctionalComponent = () => {
       style={{ backgroundImage: `url(${BgImage})`, backgroundSize: 'cover' }}
     >
       <div class="max-w-6xl max-w-[1180px] mx-auto py-10">
-        <BulletTitle class="mt-[180px] justify-center mb-[6px]" text="DELETE ACCOUNT" />
+        <BulletTitle class="mt-[180px] justify-center text-[60px] mb-[6px]" text="DELETE ACCOUNT" />
 
         <section class="rounded-3xl bg-white/5 border border-white/10 p-6 mb-10 mt-8">
           <h2 class="text-[41px] font-bold mb-3">Important Information</h2>
@@ -51,6 +52,7 @@ const DeleteAccount: FunctionalComponent = () => {
           </ul>
         </section>
       </div>
+      <Footer />
     </div>
   )
 }

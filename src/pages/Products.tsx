@@ -1,5 +1,6 @@
 import { BulletTitle } from "./_shared";
 import type { FunctionalComponent } from "vue";
+import Footer from '@/components/Footer'
 import YoroImage from "@/static/images/products/yoro.webp?url";
 import VideoChatImage from "@/static/images/products/video-chat.webp?url";
 import ShortVideoImage from "@/static/images/products/short-video.webp?url";
@@ -60,7 +61,7 @@ const Products: FunctionalComponent = () => {
       style={{ backgroundImage: `url(${BgImage})` }}
     >
       <div class="max-w-[1580px] mx-auto px-4 md:px-8 py-10">
-        <BulletTitle class="mt-[180px] justify-center mb-[6px]" text="OUR PRODUCTS" />
+        <BulletTitle class="mt-[180px] justify-center text-[60px] mb-[6px]" text="OUR PRODUCTS" />
         <div class="space-y-24 flex flex-col">
           {sections.map((s) => (
             <div
@@ -105,6 +106,7 @@ const Products: FunctionalComponent = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

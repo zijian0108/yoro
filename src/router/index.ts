@@ -18,4 +18,10 @@ const router = createRouter({
   ]
 })
 
+// 每次路由切换都应该重置滚动条
+router.beforeEach((_to, _from, next) => {
+  window.scrollTo(0, 0)
+  next()
+})
+
 export default router

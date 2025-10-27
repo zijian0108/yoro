@@ -20,7 +20,16 @@ export default defineConfig({
       postcssOptions: {
         plugins: [
           tailwindcss({
-            content: ['./src/**/*.{html,js,ts,jsx,tsx}']
+            content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
+            theme: {
+              extend: {
+                screens: {
+                  '2xl': {
+                    max: '1200px'
+                  }
+                }
+              }
+            }
           })
         ]
       }

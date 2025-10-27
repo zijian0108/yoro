@@ -77,11 +77,11 @@ export const ProductSection: FunctionalComponent<ProductSectionProps> = (props) 
   return (
     <div
       id={id}
-      class={`flex items-center justify-between flex-wrap ${className}`}
+      class={`flex items-center justify-between 2xl:flex-wrap ${className}`}
     >
-      <div class={`flex flex-col gap-5 ${logoPosition === "left" ? "order-1" : "-order-1"}`} style={leftAttr}>
+      <div class={`flex flex-col gap-5 ${logoPosition === "left" ? "order-1" : "2xl:-order-1"}`} style={leftAttr}>
         {customHeader ?? <BulletTitle class="" text={title} />}
-        <p class="text-white/80 text-[20px] leading-[30px] max-w-[567px] font-semibold">
+        <p class="text-white/80 text-[20px] leading-[30px] max-w-[567px] font-semibold whitespace-pre-line">
           {desc}
         </p>
         {links && (

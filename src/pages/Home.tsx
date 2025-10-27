@@ -8,15 +8,18 @@ import SenceImg03 from '@/static/images/home/sence-img03.webp?url'
 import YoroLogo from '@/static/images/logo-yoro.webp?url'
 import YoroImage from '@/static/images/products/yoro.webp?url'
 import HeroVideo from '@/static/screen.mp4?url'
+import Hero01Image from '@/static/images/home/hero01.webp?url'
+import Hero02Image from '@/static/images/home/hero02.webp?url'
+import Hero03Image from '@/static/images/home/hero03.webp?url'
 
 const Home: FunctionalComponent = () => {
   const sections = [
     {
       title: 'About Us',
-      desc: 'Our Mission At ETERNALENAMEL LLC, we`re dedicated to creating meaningful social connections through innovative technology. Our mission is to develop social applications that enhance human interaction and build stronger communities.',
+      desc: 'Our Mission \nAt ETERNALENAMEL LLC, we`re dedicated to creating meaningful social connections through innovative technology. Our mission is to develop social applications that enhance human interaction and build stronger communities.',
       logo: SenceImg02,
       logoWidth: 569,
-      logoPosition: 'right',
+      logoPosition: 'left',
       hasButtons: false,
       id: 'about'
     },
@@ -35,19 +38,19 @@ const Home: FunctionalComponent = () => {
       name: 'Jeminnah Ruth Sumbl Bimay',
       title: 'Founder & CEO',
       bio: 'With over 5 years of experience in social technology and community building, Jeminnah leads our operations with a vision to create meaningful digital connections. Her background in human-centered design and digital communities has shaped our approach to social networking.',
-      avatar: SenceImg01 // 占位符，实际需要添加头像图片
+      avatar: Hero01Image // 占位符，实际需要添加头像图片
     },
     {
       name: 'Michael Chen',
       title: 'Chief Technology Officer',
       bio: 'Michael brings extensive experience in software architecture and AI development. His innovative approach to technology has been instrumental in developing our cutting-edge social matching algorithms and community management tools.',
-      avatar: SenceImg01 // 占位符，实际需要添加头像图片
+      avatar: Hero03Image // 占位符，实际需要添加头像图片
     },
     {
       name: 'Sarah Johnson',
       title: 'Chief Marketing Officer',
       bio: 'Sarah is a marketing strategist with a passion for building authentic brand connections. Her campaigns have helped our products reach millions of users worldwide, focusing on community engagement and user experience.',
-      avatar: SenceImg01 // 占位符，实际需要添加头像图片
+      avatar: Hero02Image // 占位符，实际需要添加头像图片
     }
   ]
 
@@ -57,13 +60,13 @@ const Home: FunctionalComponent = () => {
       style={{ backgroundImage: `url(${BgImage})` }}
     >
       <video class="w-full" src={HeroVideo} muted loop autoplay />
-      <div class="max-w-[1580px] mx-auto px-4 md:px-0 md:mx-[360px]">
-        <section class="py-[140px] flex justify-between items-center">
+      <div class="mx-auto px-4 2xl:px-0 mx-auto max-w-[1200px] 2xl:px-10">
+        <section class="py-[140px] flex justify-between items-center 2xl:flex-wrap 2xl:gap-10">
           <div class="flex flex-col gap-5">
-            <h3 class="text-[60px] leading-[85px]">
+            <h3 class="text-[60px] leading-[85px] font-black font-['Arial_Black']">
               Building Social Connections
             </h3>
-            <p class="text-[20px] leading-[30px] font-semibold text-white max-w-[567px]">
+            <p class="text-[20px] leading-[30px] font-semibold text-white max-w-[567px] text-white/80">
               We create innovative social apps that bring people together,
               fostering meaningful relationships in the digital age.
             </p>
@@ -88,7 +91,7 @@ const Home: FunctionalComponent = () => {
         </section>
         <section class="space-y-24 flex flex-col py-[140px]">
           {sections.map((section) => (
-            <ProductSection key={section.title} {...section} />
+            <ProductSection key={section.title} {...section} class="2xl:gap-10" />
           ))}
         </section>
 
@@ -112,7 +115,7 @@ const Home: FunctionalComponent = () => {
             customHeader={
               <div class="flex flex-col gap-[14px]">
                 <img src={YoroLogo} alt="" width={103} />
-                <span class="text-[46px]">Yoro</span>
+                <span class="text-[46px] font-['Arial_Black']">Yoro</span>
               </div>
             }
             logoWidth={520}

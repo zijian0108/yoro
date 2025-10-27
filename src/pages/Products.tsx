@@ -23,7 +23,7 @@ const Products: FunctionalComponent = () => {
       customHeader: (
         <div class="flex flex-col gap-[14px]">
           <img src={YoroLogo} alt="" width={103} />
-          <span class="text-[46px]">Yoro</span>
+          <span class="text-[46px] font-['Arial_Black']">Yoro</span>
         </div>
       ),
     },
@@ -32,7 +32,7 @@ const Products: FunctionalComponent = () => {
       logo: VideoChatImage,
       logoWidth: 520,
       logoPosition: "right",
-      desc: "ETERNALENAMEL, LLC reshapes social experiences with cutting-edge technology. This segment focuses on **Interest matching for relationships** and **Activity initiation & participation**. The platform empowers users to launch diverse social activities effortlessly, and precise interest matching helps you find like-minded partners in the community, driving **Community creation & management**—making every interaction a key step in building strongly connected communities.",
+      desc: "At ETERNALENAMEL, LLC, we’re committed to forging meaningful social connections via innovative technology. This section emphasizes **Professional connection for collaboration** and interpersonal depth. Our social applications build efficient collaborative bridges for professionals, while the **Interest matching for relationships** mechanism enables you to precisely expand your network even in professional exchanges, fully embodying our mission to “enhance human interaction and build stronger communities”.",
     },
     {
       title: "Short Video",
@@ -46,7 +46,7 @@ const Products: FunctionalComponent = () => {
       logo: RandomMatchingImage,
       logoWidth: 520,
       logoPosition: "right",
-      desc: "ETERNALENAMEL, LLC specializes in creating an inclusive social ecosystem through technology. Here, you can experience the flexibility of **Community permission customization**, broaden your career prospects via **Professional skill display**, and engage deeply in **Community creation & management**. Whether you're initiating cross-cultural interactions or joining interest circles, our platform creates a space that balances professionalism and social warmth, fully delivering on our commitment to \"foster meaningful social connections\".",
+      desc: "ETERNALENAMEL, LLC specializes in creating an inclusive social ecosystem through technology. Here, you can experience the flexibility of **Community permission customization**, broaden your career prospects via **Professional skill display**, and engage deeply in **Community creation & management**. Whether you’re initiating cross-cultural interactions or joining interest circles, our platform creates a space that balances professionalism and social warmth, fully delivering on our commitment to “foster meaningful social connections”.",
     },
   ];
 
@@ -55,11 +55,11 @@ const Products: FunctionalComponent = () => {
       class="min-h-screen text-white bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${BgImage})` }}
     >
-      <div class="py-6 md:py-10 px-4 md:px-0">
-        <BulletTitle class="mt-20 md:mt-[180px] justify-center text-3xl md:text-[60px] mb-[6px]" text="OUR PRODUCTS" />
-        <div class="space-y-12 md:space-y-24 flex flex-col mx-0 md:mx-[360px]">
+      <div class="py-10 px-4 2xl:px-0">
+        <BulletTitle class="mt-[180px] justify-center text-[60px] mb-[6px]" text="OUR PRODUCTS" />
+        <div class="space-y-24 flex flex-col mx-auto max-w-[1200px] 2xl:px-10">
           {sections.map((s) => (
-            <ProductSection key={s.title} {...s} />
+            <ProductSection key={s.title} {...s} class="2xl:gap-10" />
           ))}
         </div>
       </div>

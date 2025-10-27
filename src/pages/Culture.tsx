@@ -12,10 +12,10 @@ import ArrowRightImage from '@/static/images/culture/arrow-right.webp?url'
 import ArrowLeftImage from '@/static/images/culture/arrow-left.webp?url'
 
 const CultureCard: FunctionalComponent<{ title: string; image: string }> = (props) => (
-  <div class="rounded-[34px] md:rounded-[34px] rounded-[20px] bg-white/5 border border-white/10 p-0 text-white overflow-hidden">
-    <img src={props.image} alt={props.title} class="h-[200px] md:h-[400px] w-full object-cover" />
-    <div class="p-4 md:p-6">
-      <div class="text-[20px] md:text-[32px] font-semibold">{props.title}</div>
+  <div class="rounded-[20px] md:rounded-[28px] lg:rounded-[34px] bg-white/5 border border-white/10 p-0 text-white overflow-hidden">
+    <img src={props.image} alt={props.title} class="h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full object-cover" />
+    <div class="p-4 sm:p-5 md:p-6">
+      <div class="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-semibold leading-tight">{props.title}</div>
     </div>
   </div>
 )
@@ -58,62 +58,83 @@ const goToPrevPage = () => {
 
 const Culture: FunctionalComponent = () => {
   return (
-    <div class="min-h-screen text-white bg-gradient-to-br from-purple-900 via-indigo-900 to-black"
+    <div class="min-h-screen text-white bg-gradient-to-br from-purple-900 via-indigo-900 to-black 2xl:px-4"
       style={{ backgroundImage: `url(${BgImage})`, backgroundSize: 'cover' }}
     >
-      <div class="max-w-6xl max-w-[1180px] mx-auto py-6 md:py-10 px-4 md:px-0">
-        <BulletTitle class="mt-[80px] md:mt-[180px] justify-center text-[36px] md:text-[60px] mb-[6px]" text="OUR CULTURE" />
+      <div class="max-w-[1180px] mx-auto py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8 2xl:px-0">
+        <BulletTitle class="mt-[80px] sm:mt-[120px] md:mt-[150px] lg:mt-[180px] justify-center text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] mb-[40px] sm:mb-[60px] md:mb-[80px]" text="OUR CULTURE" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-16 mt-6 md:mt-8 relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16 mt-6 sm:mt-8 relative">
           {displayedItems.value.map((item, index) => 
             item ? (
               <CultureCard key={item.title} title={item.title} image={item.image} />
             ) : (
-              <div key={`placeholder-page${currentPage.value}-slot${index}`} class="rounded-[34px] h-[496px] hidden md:block" />
+              <div key={`placeholder-page${currentPage.value}-slot${index}`} class="rounded-[20px] md:rounded-[28px] lg:rounded-[34px] h-[320px] sm:h-[380px] md:h-[440px] lg:h-[496px] hidden md:block" />
             )
           )}
           
+          {/* 桌面端箭头按钮 */}
           {currentPage.value > 0 && (
             <button 
               type="button" 
-              class="hidden md:block absolute top-1/2 -left-[50px] translate-y-[-50%] -translate-x-[100%] transition-opacity hover:opacity-80"
+              class="hidden lg:block absolute top-1/2 -left-[50px] translate-y-[-50%] -translate-x-[100%] transition-opacity hover:opacity-80"
               onClick={goToPrevPage}
             >
-              <img src={ArrowLeftImage} alt="Previous page" width={93} />
+              <img src={ArrowLeftImage} alt="Previous page" width={93} class="w-[60px] lg:w-[80px] xl:w-[93px]" />
             </button>
           )}
           
           {currentPage.value < totalPages.value - 1 && (
             <button 
               type="button" 
-              class="hidden md:block absolute top-1/2 -right-[50px] translate-y-[-50%] translate-x-[100%] transition-opacity hover:opacity-80"
+              class="hidden lg:block absolute top-1/2 -right-[50px] translate-y-[-50%] translate-x-[100%] transition-opacity hover:opacity-80"
               onClick={goToNextPage}
             >
-              <img src={ArrowRightImage} alt="Next page" width={93} />
+              <img src={ArrowRightImage} alt="Next page" width={93} class="w-[60px] lg:w-[80px] xl:w-[93px]" />
             </button>
           )}
         </div>
-        
-        {/* 移动端翻页按钮 */}
-        <div class="flex md:hidden justify-center gap-4 mb-8">
-          <button 
-            type="button" 
-            class="transition-opacity hover:opacity-80 disabled:opacity-30"
-            onClick={goToPrevPage}
-            disabled={currentPage.value === 0}
-          >
-            <img src={ArrowLeftImage} alt="Previous page" width={60} />
-          </button>
-          
-          <button 
-            type="button" 
-            class="transition-opacity hover:opacity-80 disabled:opacity-30"
-            onClick={goToNextPage}
-            disabled={currentPage.value >= totalPages.value - 1}
-          >
-            <img src={ArrowRightImage} alt="Next page" width={60} />
-          </button>
-        </div>
+
+        {/* 移动端/平板端分页按钮 */}
+        {totalPages.value > 1 && (
+          <div class="flex justify-center items-center gap-6 mb-8 lg:hidden">
+            <button 
+              type="button" 
+              class={`transition-opacity ${currentPage.value > 0 ? 'opacity-100 hover:opacity-80' : 'opacity-30 cursor-not-allowed'}`}
+              onClick={goToPrevPage}
+              disabled={currentPage.value === 0}
+            >
+              <img src={ArrowLeftImage} alt="Previous page" class="w-[50px] sm:w-[60px]" />
+            </button>
+            
+            <div class="flex gap-2">
+              {[...Array(totalPages.value)].map((_, pageNum) => {
+                const pageIndex = pageNum
+                return (
+                  <button
+                    key={`pagination-dot-${pageIndex}`}
+                    type="button"
+                    class={`w-2 h-2 rounded-full transition-all ${
+                      pageIndex === currentPage.value 
+                        ? 'bg-white w-8' 
+                        : 'bg-white/30 hover:bg-white/50'
+                    }`}
+                    onClick={() => { currentPage.value = pageIndex }}
+                  />
+                )
+              })}
+            </div>
+            
+            <button 
+              type="button" 
+              class={`transition-opacity ${currentPage.value < totalPages.value - 1 ? 'opacity-100 hover:opacity-80' : 'opacity-30 cursor-not-allowed'}`}
+              onClick={goToNextPage}
+              disabled={currentPage.value === totalPages.value - 1}
+            >
+              <img src={ArrowRightImage} alt="Next page" class="w-[50px] sm:w-[60px]" />
+            </button>
+          </div>
+        )}
       </div>
       <Footer />
     </div>

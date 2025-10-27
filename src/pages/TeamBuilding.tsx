@@ -5,9 +5,7 @@ import TeamImg02 from '@/static/images/team-building/sence02.webp?url'
 import TeamImg03 from '@/static/images/team-building/sence03.webp?url'
 import TeamImg04 from '@/static/images/team-building/sence04.webp?url'
 import TeamImg05 from '@/static/images/team-building/sence05.webp?url'
-import LocationImage from '@/static/images/location.webp?url'
-import PhoneImage from '@/static/images/phone.webp?url'
-import EmailImage from '@/static/images/email.webp?url'
+import Footer from '@/components/Footer'
 import { BulletTitle } from './_shared'
 
 interface TeamBuildingCardProps {
@@ -17,14 +15,14 @@ interface TeamBuildingCardProps {
 
 const TeamBuildingCard: FunctionalComponent<TeamBuildingCardProps> = ({ image, title }) => {
   return (
-    <div class="relative w-full h-full overflow-hidden rounded-[8px] md:w-[560px]">
+    <div class="relative h-full overflow-hidden w-full lg:w-[560px]">
       <img 
         src={image} 
         alt={title}
-        class="w-full h-full object-cover"
+        class="w-full h-full object-contain"
       />
-      <div class="absolute bottom-[20px] left-[20px] md:bottom-[47px] md:left-[41px]">
-        <h3 class="text-white text-[18px] md:text-[32px] font-normal leading-[28px] md:leading-[45px]">
+      <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 lg:bottom-[47px] lg:left-[41px] lg:right-auto">
+        <h3 class="text-white text-lg sm:text-xl md:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-relaxed lg:leading-[45px]">
           {title}
         </h3>
       </div>
@@ -45,24 +43,24 @@ const TeamBuilding: FunctionalComponent = () => {
     <div class="min-h-screen text-white bg-gradient-to-br from-purple-900 via-indigo-900 to-black"
       style={{ backgroundImage: `url(${BgImage})`, backgroundSize: 'cover' }}
     >
-      <div class="px-[20px] md:mx-[360px] pt-[60px] md:pt-[120px] pb-[60px] md:pb-[100px]">
-        <BulletTitle class="justify-center text-[32px] md:text-[56px] mb-[40px] md:mb-[80px]" text="TEAM BUILDING" />
+      <div class="px-4 2xl:px-0 mx-auto max-w-[1200px] 2xl:px-10 py-6 sm:py-8 lg:py-10">
+        <BulletTitle class="justify-center text-3xl sm:text-4xl md:text-5xl lg:text-[56px] mt-20 sm:mt-32 md:mt-40 lg:mt-[180px] mb-12 sm:mb-16 md:mb-20 lg:mb-[80px]" text="TEAM BUILDING" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-[81px] mb-[60px] md:mb-[120px]">
-          <div class="space-y-[30px] md:space-y-[99px]">
-            <div class="relative h-[300px] md:h-[651px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-1 gap-8 sm:gap-12 md:gap-16 lg:gap-[81px] mb-16 sm:mb-20 md:mb-24 lg:mb-[120px]">
+          <div class="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-[99px] w-fit mx-auto">
+            <div class="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[651px] w-full lg:w-fit">
               <TeamBuildingCard 
                 image={activities[0].image}
                 title={activities[0].title}
               />
             </div>
-            <div class="relative h-[300px] md:h-[651px]">
+            <div class="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[651px] w-full lg:w-fit">
               <TeamBuildingCard 
                 image={activities[2].image}
                 title={activities[2].title}
               />
             </div>
-            <div class="relative h-[300px] md:h-[619px]">
+            <div class="relative h-[330px] sm:h-[430px] md:h-[530px] lg:h-[619px] w-full lg:w-fit">
               <TeamBuildingCard 
                 image={activities[4].image}
                 title={activities[4].title}
@@ -70,14 +68,14 @@ const TeamBuilding: FunctionalComponent = () => {
             </div>
           </div>
 
-          <div class="space-y-[30px] md:space-y-[99px] md:pt-[170px]">
-            <div class="relative h-[300px] md:h-[651px]">
+          <div class="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-[99px] lg:pt-[170px] w-fit mx-auto">
+            <div class="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[651px] w-full lg:w-fit">
               <TeamBuildingCard 
                 image={activities[1].image}
                 title={activities[1].title}
               />
             </div>
-            <div class="relative h-[300px] md:h-[619px]">
+            <div class="relative h-[330px] sm:h-[430px] md:h-[530px] lg:h-[619px] w-full lg:w-fit">
               <TeamBuildingCard 
                 image={activities[3].image}
                 title={activities[3].title}
@@ -85,34 +83,8 @@ const TeamBuilding: FunctionalComponent = () => {
             </div>
           </div>
         </div>
-
-        <div class="mb-[60px] md:mb-[80px]">
-          <h2 class="text-[28px] md:text-[40px] font-bold mb-[25px] md:mb-[35px]">Contact Us</h2>
-          
-          <div class="space-y-[15px] md:space-y-[18px]">
-            <div class="flex items-start gap-[12px] md:gap-[15px]">
-              <img src={LocationImage} alt="Location" width={18} class="md:w-[22px] mt-[2px] md:mt-[3px]" />
-              <div class="text-white/85 text-[14px] md:text-[18px] leading-relaxed">
-                718 Whitehaver Ave, Rifle, CO 81650, United States
-              </div>
-            </div>
-            
-            <div class="flex items-center gap-[12px] md:gap-[15px]">
-              <img src={PhoneImage} alt="Phone" width={18} class="md:w-[22px]" />
-              <div class="text-white/85 text-[14px] md:text-[18px]">
-                +1702 3251463
-              </div>
-            </div>
-            
-            <div class="flex items-center gap-[12px] md:gap-[15px]">
-              <img src={EmailImage} alt="Email" width={18} class="md:w-[22px]" />
-              <div class="text-white/85 text-[14px] md:text-[18px]">
-                Email: eternalenamelllc@gmail.com
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+      <Footer />
     </div>
   )
 }

@@ -8,18 +8,18 @@ import circleLeftImage from '@/static/images/circle-left.webp?url'
 
 const DeleteAccount: FunctionalComponent = () => {
   return (
-    <div class="min-h-screen text-white bg-gradient-to-br from-purple-900 via-indigo-900 to-black"
+    <div class="min-h-screen text-white bg-gradient-to-br from-purple-900 via-indigo-900 to-black 2xl:px-4"
       style={{ backgroundImage: `url(${BgImage})`, backgroundSize: 'cover' }}
     >
-      <div class="max-w-6xl max-w-[1180px] mx-auto py-6 md:py-10 px-4 md:px-0">
-        <BulletTitle class="mt-[80px] md:mt-[180px] justify-center text-[36px] md:text-[60px] mb-[6px]" text="DELETE ACCOUNT" />
+      <div class="max-w-[1180px] mx-auto py-10 px-4 2xl:px-0">
+        <BulletTitle class="mt-[180px] justify-center text-[60px] mb-[80px]" text="DELETE ACCOUNT" />
 
-        <section class="rounded-[20px] md:rounded-3xl bg-white/5 border border-white/10 p-6 md:p-12 mb-10 mt-6 md:mt-8">
-          <h2 class="text-[28px] md:text-[41px] font-bold mb-3 md:mb-6">Important Information</h2>
-          <p class="text-white/80 text-[16px] md:text-[20px] leading-relaxed mb-4 md:mb-6">
+        <section class="rounded-3xl bg-white/5 border border-white/10 p-12 mb-10 mt-8">
+          <h2 class="text-[41px] font-bold mb-6">Important Information</h2>
+          <p class="text-white/80 text-[20px] leading-relaxed mb-6">
             Before you proceed with deleting your account, please read the following carefully:
           </p>
-          <ul class="space-y-3 md:space-y-4 text-[14px] md:text-[18px] mb-8 md:mb-12">
+          <ul class="space-y-4 text-[18px] mb-12">
             <li class="flex items-start gap-3">
               <div class="flex items-center h-[33px] w-[9px] shrink-0">
                 <img src={circleLeftImage} alt="" class="w-full h-[9px] object-cover"/>
@@ -46,19 +46,19 @@ const DeleteAccount: FunctionalComponent = () => {
             </li>
           </ul>
           
-          <h2 class="text-[28px] md:text-[41px] font-bold mb-3 md:mb-6">Delete Account</h2>
-          <p class="text-white/80 text-[16px] md:text-[20px] leading-relaxed mb-6 md:mb-8">
+          <h2 class="text-[41px] font-bold mb-6">Delete Account</h2>
+          <p class="text-white/80 text-[20px] leading-relaxed mb-8">
             To proceed with deleting your account, please follow these steps:
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+          <div class="grid grid-cols-2 gap-8 mb-8">
             <div class="flex justify-center">
-              <img src={DeleteAccountImg01} alt="Delete Account Step 1" class="w-full max-w-[400px] md:max-w-none md:h-[744px] object-contain" />
+              <img src={DeleteAccountImg01} alt="Delete Account Step 1" class="h-[744px] object-contain" />
             </div>
             <div class="flex justify-center">
-              <img src={DeleteAccountImg02} alt="Delete Account Step 2" class="w-full max-w-[400px] md:max-w-none md:h-[744px] object-contain" />
+              <img src={DeleteAccountImg02} alt="Delete Account Step 2" class="h-[744px] object-contain" />
             </div>
           </div>
-          <ul class="space-y-3 md:space-y-4 text-[14px] md:text-[18px]">
+          <ul class="space-y-4 text-[18px]">
             <li class="flex items-baseline gap-6">
               <div class="flex items-center h-[33px] w-[9px] shrink-0">
                 <img src={circleLeftImage} alt="" class="w-full h-[9px] object-cover"/>
@@ -67,11 +67,11 @@ const DeleteAccount: FunctionalComponent = () => {
             </li>
           </ul>
           
-          <h2 class="text-[28px] md:text-[41px] font-bold mt-8 md:mt-12 mb-3 md:mb-6">Contact Us</h2>
+          <h2 class="text-[41px] font-bold mt-12 mb-6">Contact Us</h2>
           <p class="text-white/80 text-[24px] leading-relaxed mb-4">
             If you have any questions or concerns, please do not hesitate to contact our customer support team:
           </p>
-          <div class="flex items-center gap-1 text-white/80 text-[24px]">
+          <div class="flex items-center gap-1 text-white/80 text-[24px] flex-wrap">
             <img src={EmailImage} alt="Email" width={24} />
             <span>Email: </span>
             <a href="mailto:retreatblissful506@gmail.com" class="text-white hover:text-pink-400 transition-colors">
